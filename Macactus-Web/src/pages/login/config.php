@@ -1,23 +1,23 @@
 <?php
-$dbhost = 'localhost';
-$dbuser = 'root';
-$dbpass = '';
-$db = 'cadastro';
+$dbhost = 'br814.hostgator.com.br';
+$dbuser = 'macact56_root';
+$dbpass = 'KingKonge2micos';
+$db = 'macact56_macdev';
 
-$con = mysqli_connect($dbhost,$dbuser,$dbpass);
-if ($con){
-    #echo("Conectado ");
+$link = mysqli_connect($dbhost,$dbuser,$dbpass);
+if ($link){
+    echo("Conectado ");
 }
-if (!$con)
+if (!$link)
   {
   die('Erro de conexão: ' . mysqli_error());
   }
 
 $sql = "USE ".$db."";
-if ($con->query($sql) === TRUE) {
-    #echo "Banco de dados encontrado ";
+if ($link->query($sql) === TRUE) {
+    echo "Banco de dados encontrado ";
   } else {
-    echo "Erro ao encontrar banco de dados: " . $con->error;
+    echo "Erro ao encontrar banco de dados: " . $link->error;
   }
 
 ?>
