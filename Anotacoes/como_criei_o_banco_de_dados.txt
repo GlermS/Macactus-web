@@ -1,0 +1,117 @@
+Bom dia Guillaume, segue o código da criação do banco de dados, se quiser ver como fiz
+
+create table if not exists professores(
+id_prof int not null auto_increment,
+nome_prof varchar (30) not null,
+email_prof varchar (40) not null,
+senha_prof varchar (40) not null,
+escola_prof varchar (40) not null,
+foto_prof_id smallint,
+primary key (id_prof)
+) charset = utf8;
+
+
+create table if not exists alunos(
+id_aluno int not null auto_increment,
+nome_aluno varchar (30) not null,
+email_aluno varchar (40) not null,
+senha_aluno varchar (40) not null,
+escola_aluno varchar (40) not null,
+foto_aluno_id smallint,
+whatsapp_aluno varchar (15),
+primary key (id_aluno)
+) charset = utf8;
+
+drop table teste;
+
+alter table professores
+add column whatsapp_prof varchar (15);
+
+create table if not exists gestor(
+id_gestor int not null auto_increment,
+nome_gestor varchar (30) not null,
+email_gestor varchar (40) not null,
+senha_gestor varchar (40) not null,
+escola_gestor varchar (40) not null,
+foto_gestor_id smallint,
+whatsapp_gestor varchar (15),
+primary key (id_gestor)
+) charset = utf8;
+
+create table if not exists jogos(
+id_jogo int not null auto_increment,
+nome_jogo varchar (30) not null,
+foto_jogo_id smallint,
+nota_jogo float,
+link_jogo varchar (150),
+tags varchar(200),
+primary key (id_jogo)
+) charset = utf8;
+
+create table if not exists turmas(
+id_turma int not null auto_increment,
+nome_turma varchar (30) not null,
+foto_turma_id smallint,
+nota_turma float,
+id_professor_turma smallint not null,
+inicio_aulas date,
+fim_aulas date,
+primary key (id_turma)
+) charset = utf8;
+
+create table if not exists hist_prof(
+id_hist_prof int not null auto_increment,
+id_prof smallint not null,
+id_jogos_escolhidos varchar(200),
+primary key (id_hist_prof)
+) charset = utf8;
+
+create table if not exists hist_aluno(
+id_hist_aluno int not null auto_increment,
+id_aluno smallint not null,
+satisfacao_geral float,
+id_jogo_jogado smallint not null,
+nota_jogo float,
+primary key (id_hist_aluno)
+) charset = utf8;
+
+select * from jogos;
+
+insert into jogos
+(id_jogo,nome_jogo,foto_jogo_id,nota_jogo,link_jogo,tags)
+values
+(DEFAULT,'Pega bolhas',DEFAULT,DEFAULT,'http://www.escolagames.com.br/jogos/pegabolhas/','matematica pares-impares corrida-infinita rapido facil'),
+(DEFAULT,'Classificação dos animais',DEFAULT,DEFAULT,'http://www.escolagames.com.br/jogos/classificacaoDosAnimais/','ciencias animais quiz texto medio'),
+(DEFAULT,'Mestre da Tabuada',DEFAULT,DEFAULT,'http://www.escolagames.com.br/jogos/mestreDaTabuada/','matematica tabuada voo-infinito logica medio'),
+(DEFAULT,'Word Search',DEFAULT,DEFAULT,'https://www.clickjogos.com.br/jogos/word-search','portugues palavras caca-palavras texto facil'),
+(DEFAULT,'Stop',DEFAULT,DEFAULT,'https://stopots.com/pt/','portugues palavras escrever rapido medio'),
+(DEFAULT,'Scratch',DEFAULT,DEFAULT,'https://scratch.mit.edu/','informatica programacao escrever logica texto'),
+(DEFAULT,'Onde Está Carmen Sandiego',DEFAULT,DEFAULT,'https://earth.google.com/web/@17.90693717,-12.41937117,-34610.18445605a,57359668.97d,35y,0.00004064h,18.19296234t,0r/data=CjwSOhIgYmU3N2ZmYzU0MTc1MTFlOGFlOGZkMzdkYTU5MmE0MmEiFnNwbC14LXgteC1zcGxhc2hzY3JlZW4','geografia historia investigacao texto 3D'),
+(DEFAULT,'Rock The Dock',DEFAULT,DEFAULT,'https://www.clickjogos.com.br/jogos/rock-the-dock','nenhuma navio tocar-tela mobile rapido'),
+(DEFAULT,'Alien Quest',DEFAULT,DEFAULT,'https://www.clickjogos.com.br/jogos/alien-quest','portugues palavras escrever texto aliens'),
+(DEFAULT,'Caça Palavras Infantil',DEFAULT,DEFAULT,'http://www.ludicas.com.br/palavras/caca-palavras/','portugues palavras caca-palavras fabulas medio'),
+(DEFAULT,'Sudoku',DEFAULT,DEFAULT,'https://rachacuca.com.br/logica/sudoku/','matematica logica elementos-cruzados desafio estatico'),
+(DEFAULT,'Amigas no Cinema - II',DEFAULT,DEFAULT,'https://rachacuca.com.br/logica/problemas/amigas-no-cinema-ii/','portugues logica problema-logico desafio estatico'),
+(DEFAULT,'Show de Talentos ',DEFAULT,DEFAULT,'https://rachacuca.com.br/logica/problemas/show-de-talentos/','portugues logica problema-logico desafio estatico'),
+(DEFAULT,'Lendas do folclore',DEFAULT,DEFAULT,'http://www.escolagames.com.br/jogos/lendasDoFolclore/','cultura folclore quebra-cabeca fabulas facil'),
+(DEFAULT,'Crazy Bird',DEFAULT,DEFAULT,'https://poki.com.br/g/angry-birds','ciencias fisica quebra-cabeca animais competicao'),
+(DEFAULT,'labirinto infantis * Foguete',DEFAULT,DEFAULT,'https://www.jogosgratisparacriancas.com/labirintos/jogos_labirintos_foguete.php','cultura motricidade labirinto espaco facil'),
+(DEFAULT,'Mango Mania',DEFAULT,DEFAULT,'https://www.jogosdaescola.com.br/mango-mania/','nenhuma motricidade plataforma rapido facil');
+
+
+
+
+
+
+select * from professores;
+
+
+
+alter table professores
+modify column username varchar (50) not null unique;
+
+alter table professores
+add column created_at DATETIME DEFAULT CURRENT_TIMESTAMP;
+
+alter table turmas
+add column escola varchar(50);
