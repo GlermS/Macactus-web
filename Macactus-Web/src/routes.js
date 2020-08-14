@@ -8,7 +8,6 @@ function Routes() {
     return (
         <BrowserRouter>
             <Route path="/" exact component={Landing} />
-
         </BrowserRouter>
         );
 }
