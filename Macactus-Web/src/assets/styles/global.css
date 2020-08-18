@@ -1,37 +1,28 @@
 :root {
-    --color-background: #F0F0F7;
-    --color-primary-lighter: #9871F5;
-    --color-primary-light: #916BEA;
-    --color-primary: #8257E5;
-    --color-primary-dark: #774DD6;
-    --color-primary-darker: #6842C2;
-    --color-secundary: #04D361;
-    --color-secundary-dark: #04BF58;
-    --color-title-in-primary: #FFFFFF;
-    --color-text-in-primary: #D4C2FF;
-    --color-text-title: #32264D;
-    --color-text-complement: #9C98A6;
-    --color-text-base: #6A6180;
-    --color-line-in-white: #E6E6F0;
-    --color-input-background: #F8F8FC;
-    --color-button-text: #FFFFFF;
-    --color-box-base: #FFFFFF;
-    --color-box-footer: #FAFAFC;
-    font-size: 50%;
+    --color-background-1: #FB7969;
+    --color-background-2: #245068;
+    --color-light-in-dark: #F4F5F6;
+    --color-highlight: #31997f;
+    --color-input-background: #CED4E4;
+    --color-text-in-white: #4B4B4D;
+
+    font-size: 60%;
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
+    width: 100%;
     box-sizing: border-box;
+    border: 0;
 }
 
 html, body, #root{
     height: 100vh;
 }
 
-body{
-    background:var(--color-background);
+body {
+    background-image: linear-gradient(var(--color-background-2),var(--color-background-1));
 }
 
 #root{
@@ -45,8 +36,9 @@ body,
 input,
 button,
 textarea{
-    font: 500 1.6rem Poppins;
-    color: var(--color-text-base)
+    font: 600 1.6rem Open Sans;
+    color: var(--color-text-in-white);
+    font-size:1.5rem;
 }
 
 .container{

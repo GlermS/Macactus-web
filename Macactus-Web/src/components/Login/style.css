@@ -1,4 +1,40 @@
-.login-box{
-    border:1px solid black;
-    padding:10px;
+.login-box {
+    border-radius:3rem;
+    padding: 10px;
+    background: var(--color-light-in-dark);
+    width: 90vw;
+    display: flex;
+    justify-items: center;
+}
+
+
+
+.login-box form label {
+    display: block;
+    margin: 0;
+    width: 100%;
+}
+.user-inputs{
+    padding: 1rem;
+}
+
+    .user-inputs input {
+        height: 3rem;
+        background: var(--color-input-background);
+    }
+.user-inputs input:focus{
+    outline:none;
+}
+.login-box .form-button {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.form-button input {
+    display: flex;
+    justify-content: center;
+    width: 7rem;
+    height: 4rem;
+    padding: 0.5rem 1rem;
 }
