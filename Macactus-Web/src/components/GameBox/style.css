@@ -1,0 +1,29 @@
+.game-container{
+    height: 60vw;
+    width: 60vw;
+    border-radius: 3rem;
+    background:var(--color-light-in-dark);
+}
+
+img.game-image{
+    object-fit: fill;
+    border-radius: 3rem 3rem 0 0;
+    height: 50%;
+    margin:0;
+}
+.box-content{
+    padding: 1% 0 0 10% ;
+}
+
+.box-content {
+    margin: 0;
+    line-height: 2.5rem;
+}
+
+#subject{
+    text-transform: uppercase;
+    background: var(--color-highlight);
+    padding:0.3rem;
+    border-radius: 0.4rem;
+    color:var(--color-light-in-dark)
+}
