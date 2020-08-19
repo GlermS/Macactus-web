@@ -11,7 +11,7 @@ function Landing() {
          
           <div className="logo-box">
               <div className="center">
-              <img src={Logo} id="logo" />
+              <img src={Logo} id="logo" alt="Sr.Gregório"/>
               </div>
           </div>
 
@@ -23,7 +23,7 @@ function Landing() {
            
           <div className="center">
               <div className="register">
-                  <p>Ainda n�o tem uma conta?</p>
+                  <p>Ainda não tem uma conta?</p>
                   <a href="https://macactus.top/">Criar uma conta</a>
               </div>
           </div>

@@ -16,7 +16,14 @@
     padding: 1rem;
 }
 
-.form-button input {
+.form-button input{
+    border-radius: 0.8rem;
+    margin: 1.5rem 1rem 2rem 0;
+    background:var(--color-background-1);
+    color:var(--color-light-in-dark)
+}
+
+.form-button .enter{
     border-radius: 0.8rem;
     margin: 1.5rem 1rem 2rem 0;
     background:var(--color-background-1);
@@ -48,4 +55,9 @@ footer {
     color: var(--color-light-in-dark);
     font-weight: 300;
     font-size:1.3rem;
+}
+@media(max-width:400px){
+    #logo{
+        max-height: 55px;
+    }
 }
