@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 import './style.css';
-import api from '../../services/api.js';
+//import api from '../../services/api.js';
 
 class Login extends Component {
     constructor(props) {
@@ -11,10 +12,10 @@ class Login extends Component {
             app: false
         };
 
-        this.handleInputChange = this.handleInputChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+       // this.handleInputChange = this.handleInputChange.bind(this);
+        //this.handleSubmit = this.handleSubmit.bind(this);
     }
-
+/*
     handleInputChange(event) {
         const target = event.target;
         const value = target.value;
@@ -33,15 +34,38 @@ class Login extends Component {
                 console.log(response.data.total)
             })
             .catch(error => this.setState({ error: error.message }));
+    }*/
+    //VERSÃO DE DEMOSTRAÇÃO
+    render() {
+        return (
+            <form onSubmit={this.handleSubmit}>
+            <div className="user-inputs">
+                    <label>
+                        <p>Usuário(e-mail):<br /></p>
+                <input type="text" name="username" value="Sr. Gregório"/>
+            </label>
+            <label>
+                    <p>Senha:<br /></p>
+                <input type="text" name="keyword" value="********"/>
+                    </label>
+            </div>  
+            <div className="form-button">
+                    <Link to="/home" className="enter">
+                        Entrar
+                    </Link>
+                </div>
+            </form>
+        );
     }
-
+    //
+    /*
     render() {
         return (
             
                 <form onSubmit={this.handleSubmit}>
                 <div className="user-inputs">
                         <label>
-                            <p>Usu�rio(e-mail):<br /></p>
+                            <p>Usuário(e-mail):<br /></p>
                     <input type="text" name="username" value={this.state.username} onChange={this.handleInputChange} />
                 </label>
                 <label>
@@ -54,7 +78,7 @@ class Login extends Component {
                     </div>
                 </form>
         );
-    }
+    }*/
 }
 
 export default Login;

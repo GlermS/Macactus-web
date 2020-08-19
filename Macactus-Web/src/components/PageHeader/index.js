@@ -1,34 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import profile from '../../assets/images/Sr Gregório.jpg'
 
-import logoImg from '../../assets/images/logo.svg'
-import backIcon from '../../assets/images/icons/back.svg'
+import './style.css';
 
-import './style.css'
-
-interface PageHeaderProps {
-    title: string;
-    description?: string;
-}
-
-const PageHeader: React.FC<PageHeaderProps> = (props)=> {
+function PageHeader(){
     return (
             <header className="page-header">
                 <div className="top-bar-container">
-                    <Link to="/">
-                        <img src={backIcon} alt="voltar" />
-                    </Link>
-                    <img src={logoImg} alt="Proffy" />
-
-
+                    <h2 className="page-name">Página Inicial</h2>  
+                    <img src={profile} id="profile-image"/>
                 </div>
-                <div className="header-content">
-                <strong>{props.title}</strong>
-                {props.description && <p className="description">{props.description}</p>}
-                {props.children}
-                </div>
-            
-            
             </header>
         );
 }
