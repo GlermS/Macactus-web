@@ -1,8 +1,13 @@
 ﻿import React from 'react';
 import './style.css';
 
-function GameBox(){
-    return(
+class GameBox extends React.Component{
+    super(props){};
+    state = {
+        active:false
+      };
+    render(){
+        return(
         <div className="game-container">
             <img src="https://images.habbo.com/habbo-web/america/pt/assets/images/app_summary_image-1200x628.85a9f5dc.png"
             className="game-image"/>
@@ -11,8 +16,8 @@ function GameBox(){
                 <h3>Habbo</h3>
                 <span className="materia" id="subject">Português</span>
             </div>
-        </div>
-    );
+        </div>);
+    };
 }
 
 export default GameBox;
